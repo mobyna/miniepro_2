@@ -1,0 +1,247 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(235, 235, 235);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+
+.container{
+    max-width: 1300px;
+    margin:0 auto;
+}
+.section_nav{
+    width: 100%;
+    background-color: white;
+    margin-top: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px 0 rgba(99,99,99,0.2);
+    display: grid;
+    grid-template-columns: 10% 45% 25%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2rem;
+}
+
+.left_nav{
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: start;
+}
+.left_nav>a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+.left_nav>a>img{
+    min-width: 50px;
+}
+
+.center_nav>ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+}
+
+.center_nav>ul>li>a{
+    text-decoration: none;
+    color: black;
+}
+
+.center_nav>ul>li>a.main{
+    background-image: linear-gradient(71deg,#3ac2ff 50%,#2f56ff);
+    padding: 12px;
+    border-radius: 22px;
+    color: white;
+    font-weight: bold;
+}
+
+.right_nav{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap:2rem;
+}
+.right_nav  img{
+    border-radius: 100%;
+     width: 50px;
+}
+
+.right_nav>div.icon_group{
+    display: flex;
+    gap: 2rem;
+}
+.right_nav>div.user_section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:1rem;
+}
+.right_nav>div.user_section button{
+    width: 67px;
+    background-color: #edfdfa;
+    color: rgb(142, 174, 182);
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+#toggle_nav:checked + label + ul{
+    transform: translateX(0);
+}
+
+
+@media screen and (max-width:999px) {
+
+    .section_nav{
+        grid-template-columns: 3% 42% 24%;
+    }
+    
+    .left_nav>a>img{
+        min-width: 36px;
+    }
+    .left_nav>a{
+        font-size: 0.9rem;
+    }
+
+
+    .center_nav>ul{
+        font-size: 0.8rem;
+    }
+    .center_nav>ul>li>a.main{
+        padding: 6px;
+    }
+
+    .right_nav svg{
+        width: 13px;
+    }
+    .right_nav>div.user_section button{
+        width: 57px;
+        padding: 0.2rem;
+        font-size: 0.8rem;
+    }
+    .right_nav  img{
+        width: 40px;
+    }
+
+}
+
+@media screen and (min-width:768px){
+    .mobile_nav{
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px){
+    
+    .section_nav{
+        grid-template-columns: 3% 89% 3%;
+        padding: 0 1rem;
+    }
+
+    .left_nav img{
+        min-width: 27px;
+    }
+
+    .left_nav a{
+        font-size: 0.5rem;
+    }
+
+    .right_nav a svg{
+        width: 10px;
+        gap: 1.4rem;
+        margin-right: 1rem;
+    }
+
+    .user_section>div.status_connection button{
+        width: 46px;
+        font-size: 0.5rem;
+        padding: 0.2rem;
+    }
+
+
+    .center_nav{
+        display: none;
+    }
+    
+    .list_nav_mobile{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: white;
+    width: 200px;
+    transform: translateX(-350px);
+    transition: all 250ms ease-out;
+
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0 2rem 2rem;
+    text-align: left;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    overflow-x: hidden;
+
+
+    }
+    /*.mobile_nav>label{
+        position: relative;
+        top: 16px;
+    }*/
+    .line{
+        display: block;
+        border-bottom: 2px solid ;
+        width: 14px;
+        margin-bottom: 3px;
+        transition: all 260ms ease-out;
+    }
+
+    #toggle_nav:checked + label>span.line_mid{
+        transform: translateX(10px);
+        opacity: 0;
+    }
+
+    #toggle_nav:checked + label>span.line_top{
+        transform: rotate(130deg);
+        position: relative;
+        top: 5px;
+    }
+
+    #toggle_nav:checked + label>span.line_bottom{
+        transform: rotate(60deg);
+        position: relative;
+        bottom: 5px;
+    }
+
+    .mobile_nav a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .mobile_nav ul{
+        list-style: none;
+    }
+
+    .mobile_nav a.main{
+        background-image: linear-gradient(71deg,#3ac2ff 50%,#2f56ff);
+        padding: 12px;
+        border-radius: 22px;
+        color: white;
+        font-weight: bold;
+    }
+
+
+
+}
